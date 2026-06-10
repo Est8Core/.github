@@ -4,13 +4,16 @@
 
 <br/><br/>
 
-# The Operating System for Real‑Estate Brokerage
+# One platform to run your entire brokerage.
 
-#### From the first lead to the closed commission — one platform for brokerage companies **and** individual brokers.
+#### Leads · properties · deals · commissions · teams — unified. Built **Arabic‑first** for MENA, for **brokerage companies _and_ individual brokers**.
+
+> **Stop juggling WhatsApp, spreadsheets, property portals, and half‑a‑dozen disconnected tools.**
+> Est8Core brings it all into **one source of truth** — *we save you all of that.*
 
 <br/>
 
-[![Live Demo](https://img.shields.io/badge/▶_Try_the_Live_Demo-4f8cff?style=for-the-badge&logoColor=white)](https://est8core.github.io)
+[![Live Demo](https://img.shields.io/badge/▶_Try_the_Live_Demo-4f8cff?style=for-the-badge&logoColor=white)](https://est8core.github.io/.github/)
 &nbsp;
 [![Arabic](https://img.shields.io/badge/🇸🇦_اقرأ_بالعربية-22d3ee?style=for-the-badge)](./README.ar.md)
 &nbsp;
@@ -25,36 +28,83 @@
 
 ---
 
-## 🎯 The Problem
+## ❌ The Problem — a brokerage running on a patchwork
 
-Real‑estate brokerages are growth machines run on tools that were never built for them:
+A real‑estate office is a fast machine for capturing leads and closing deals. Yet almost every brokerage runs on a **patchwork of tools that were never built to work together** — and the cracks between them is exactly where money leaks out.
 
-| What they use today | Why it hurts |
+| The pain you live every day | What it actually costs you |
 |---|---|
-| 📊 **Spreadsheets + personal WhatsApp** | Leads slip through the cracks · no follow‑up · no reporting · zero management visibility |
-| 🧩 **Generic global CRMs** (HubSpot, Zoho…) | Not real‑estate aware · weak Arabic · costly to customize · USD pricing |
-| 🏚️ **Some regional systems** | Often **agency/portal‑centric** · individual brokers underserved · limited hierarchy/scoping depth |
+| 📥 Leads land on **WhatsApp, Facebook, property portals, and walk‑ins** — then scatter across phones and notebooks | Leads forgotten, never followed up, lost to whoever responds first |
+| 🧩 Clients in one app, properties in another, **commissions in a spreadsheet**, documents in a drive | No single source of truth · constant **double data‑entry** · errors |
+| 🔁 You juggle **5–7 disconnected tools** that don't talk to each other | Hours wasted copying data · context lost in the gaps |
+| 🌍 Most "solutions" are **English‑only, agency‑only, or enterprise‑priced** | The MENA broker — *especially the individual* — is left underserved |
+| 👁️ No real view of **branch / team / agent** performance | Decisions made on gut and memory, not data |
+| 💸 Commissions & installments tracked **by hand** | Disputes, missed payments, leaked revenue |
 
-**The cost:** leaked leads, untracked commissions, decisions made on gut and memory instead of data.
+> **The bottom line:** lost leads, untracked commissions, blind management, and your team spending more time *feeding tools* than *closing deals*.
 
 ---
 
-## 💡 What is Est8Core?
+## ✅ The Solution — one platform, one source of truth
 
-**Est8Core** is a **multi‑tenant SaaS** purpose‑built for **real‑estate brokerage** — modeling the actual lifecycle, not a generic pipeline bent to fit:
+**Est8Core replaces the entire fragmented stack with a single platform**, modeled on how brokerages *actually* operate — and built **Arabic‑first** for the MENA market.
 
-```
-Capture lead  →  Qualify  →  Show property  →  Negotiate  →  Close with commission
-```
+| The pain | How Est8Core solves it |
+|---|---|
+| Leads scattered across channels | 🎯 **One lead pipeline** — every source, every lead, with assignment, distribution & follow‑ups. Nothing slips. |
+| Data spread across disconnected apps | 🔗 **Everything connected** — clients, properties, deals, commissions live in one system, in sync. |
+| Juggling many tools + double entry | 🧰 **All‑in‑one** — one login, one source of truth. *We save you all of that.* |
+| English‑only / agency‑only / pricey | 🌍 **Arabic‑first**, for **company _and_ individual broker**, MENA‑fit pricing. |
+| No team/branch visibility | 🏢 **Real hierarchy** (branches · teams · roles) with **data scoping** — each person sees exactly what's theirs. |
+| Commissions by hand | 🤝 **Native deals** with commissions, installments & approvals. |
 
-It's designed around how brokerages *really* operate — **branches, teams, roles, visibility scopes, lead distribution, and commissions** — while staying dead‑simple for the solo broker.
+<div align="center">
 
-### 👥 Built for two kinds of customer
+### 🔁 6+ tools → **1 platform**
+
+</div>
+
+---
+
+## 🆚 Benchmark — replace your whole stack
+
+Most brokerages don't compare *one CRM vs another* — they compare **"the pile of tools I use now" vs "one platform."** Here's what Est8Core consolidates:
+
+| The job to be done | Typically done today with… | **Est8Core** |
+|---|---|:---:|
+| Capture leads (WhatsApp · portals · FB) | WhatsApp + portal inbox + notebook | ✅ Unified **Leads** |
+| Client database & history | Excel / a contacts app | ✅ **Contacts** + timeline |
+| Property listings | Portal + spreadsheet | ✅ **Properties** |
+| Deals, commissions & installments | Spreadsheets | ✅ **Deals** (commission/installments) |
+| Branch / team / role management | Nothing, or a generic CRM | ✅ **Branches & Teams** + scoping |
+| Client communication | Personal WhatsApp | ✅ **WhatsApp inbox** *(roadmap)* |
+| Reports & targets | Manual, end‑of‑month | ✅ **Dashboards** *(roadmap)* |
+
+> **From 6+ disconnected tools to a single, connected platform.**
+
+### …and vs other CRMs
+
+Regional incumbents are **mature and capable** — Est8Core competes by owning the **underserved combination**: *Arabic‑first · individual **and** company · truly all‑in‑one · MENA‑fit pricing.*
+
+| | Generic CRM<br/>(HubSpot · Zoho) | Regional RE CRM<br/>(PropSpace · RealCube) | **Est8Core** |
+|---|:---:|:---:|:---:|
+| Real‑estate native | 🟡 heavy setup | ✅ | ✅ |
+| **Arabic‑first / RTL** | 🟡 partial | 🟡 often English‑first | ✅ **native** |
+| **Individual broker _and_ company** | 🟡 | 🟡 agency‑centric | ✅ **both** |
+| **All‑in‑one** (no bolt‑on add‑ons) | 🟡 add‑ons | 🟡 portal‑centric | ✅ |
+| Brokerage hierarchy + data scoping | 🟡 enterprise tiers | 🟡 varies | ✅ granular |
+| MENA‑fit, accessible pricing | 🟡 USD / global | 🟡 ~AED 365–5,500/mo | ✅ |
+
+<sub>Legend: ✅ native focus · 🟡 partial / varies. Directional, category‑level comparison — capabilities differ across products and evolve; a ✅ reflects Est8Core's design focus, with some items in Early Access / on the roadmap. Competitor names belong to their owners; this is positioning, not a feature audit.</sub>
+
+---
+
+## 👥 Built for two kinds of customer
 
 | 🏢 **Brokerage Company** | 👤 **Individual Broker** |
 |---|---|
 | Full hierarchy: **Owner → Branch Heads → Team Leaders → Agents** | Simple setup, **no branch/role overhead** |
-| Branches · roles · data scoping · lead distribution | Start capturing leads and closing deals on day one |
+| Branches · roles · data scoping · lead distribution | Capture leads and close deals from **day one** |
 
 > **One platform that grows with you** — from a solo broker to a multi‑branch network.
 
@@ -67,50 +117,13 @@ It's designed around how brokerages *really* operate — **branches, teams, role
 | 🎯 | **Leads** | Sources, stages, **multi‑assignment**, distribution, follow‑ups |
 | 👤 | **Contacts** | Unified client record with a full interaction timeline |
 | 🏠 | **Properties** | Catalog with media, status & publishing |
-| 🤝 | **Deals** | Negotiation pipeline, **commissions, installments**, approvals |
+| 🤝 | **Deals** | Negotiation pipeline · **commissions, installments**, approvals |
 | 🏢 | **Branches & Teams** | A real organizational hierarchy |
 | 🔐 | **RBAC + Data Scoping** | Each role sees/edits only what's theirs — **company / branch / team / assigned** |
 | 💬 | **WhatsApp Inbox** | Talk to clients inside the system · *(roadmap)* |
 | 🔔 | **Notifications** | Real‑time, multi‑channel · *(roadmap)* |
 | 📤 | **Data I/O** | Import & export — full operability |
 | 📊 | **Dashboards · Reports · Targets** | Role‑aware management visibility · *(roadmap)* |
-
----
-
-## 🆚 Benchmark — where Est8Core stands apart
-
-Regional incumbents are **mature and capable** — Est8Core competes by owning an **underserved combination**: *Arabic‑first, individual **and** company in one platform, WhatsApp‑native, a modern multi‑tenant core, and MENA‑fit pricing.*
-
-```mermaid
-quadrantChart
-    title Real-Estate CRM positioning
-    x-axis "Generic CRM" --> "Real-estate native + Arabic-first"
-    y-axis "Agency / Enterprise only" --> "Individual + Company"
-    quadrant-1 "Best fit for MENA brokers"
-    quadrant-2 "Flexible but generic"
-    quadrant-3 "Manual / fragmented"
-    quadrant-4 "Real-estate, agency-centric"
-    "Est8Core": [0.90, 0.88]
-    "PropSpace": [0.80, 0.28]
-    "RealCube": [0.78, 0.16]
-    "PropHero": [0.70, 0.42]
-    "Zoho CRM": [0.33, 0.55]
-    "HubSpot": [0.22, 0.50]
-    "Sheets + WhatsApp": [0.12, 0.45]
-```
-
-| Dimension | Sheets + WhatsApp | Global CRM<br/>(HubSpot / Zoho) | Regional RE CRM<br/>(PropSpace / RealCube) | **Est8Core** |
-|---|:---:|:---:|:---:|:---:|
-| Real‑estate domain model | ⬜ | 🟡 *heavy customization* | ✅ | ✅ |
-| **Arabic‑first / RTL** | 🟡 *manual* | 🟡 *partial* | 🟡 *varies* | ✅ **native** |
-| **Individual broker + company in one** | ⬜ | 🟡 | 🟡 *agency‑centric* | ✅ **both** |
-| Brokerage hierarchy + data scoping | ⬜ | 🟡 *enterprise tiers* | 🟡 *varies* | ✅ **granular** |
-| Commissions + installments | ⬜ | ⬜ *manual* | 🟡 *varies* | ✅ |
-| **WhatsApp‑native inbox** | 🟡 *personal app* | 🟡 *add‑on* | 🟡 *varies* | ✅ *(roadmap)* |
-| Multi‑tenant isolation (schema‑per‑tenant) | — | ✅ *(their cloud)* | 🟡 *varies* | ✅ |
-| MENA‑fit, accessible pricing | — | 🟡 *USD, global* | 🟡 *~AED 365–5,500/mo* | ✅ *(roadmap)* |
-
-<sub>Legend: ✅ native focus · 🟡 partial / varies · ⬜ not designed for it · — n/a. Directional, category‑level comparison — capabilities differ across products and evolve; a ✅ reflects Est8Core's design focus, with some items in Early Access / on the roadmap. Competitor names belong to their owners; this is positioning, not a feature audit.</sub>
 
 ---
 
@@ -140,7 +153,7 @@ Try an early interactive preview of the product — no signup:
 
 <div align="center">
 
-[![Open Live Demo](https://img.shields.io/badge/▶_Open_Live_Demo-est8core.github.io-4f8cff?style=for-the-badge)](https://est8core.github.io)
+[![Open Live Demo](https://img.shields.io/badge/▶_Open_Live_Demo-est8core.github.io-4f8cff?style=for-the-badge)](https://est8core.github.io/.github/)
 
 </div>
 

@@ -22,7 +22,6 @@
 
   <text x="228" y="150" font-size="76" font-weight="800" fill="#eef2fb" letter-spacing="-1">Est8Core</text>
   <text x="232" y="196" font-size="26" font-weight="600" fill="#9aa7c7">Real-Estate Brokerage CRM</text>
-  <text x="232" y="232" font-size="24" font-weight="700" fill="#22d3ee" direction="rtl">نظام تشغيل الوساطة العقارية</text>
 
   <g font-size="17" font-weight="700" transform="translate(232,262)">
     <g><rect x="0" y="0" width="132" height="34" rx="17" fill="#fbbf24" opacity="0.15"/><text x="66" y="23" fill="#fbbf24" text-anchor="middle">Early Access</text></g>
