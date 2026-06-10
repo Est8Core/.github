@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Est8Core CRM — نظام إدارة الوساطة العقارية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/app.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config={
+  darkMode:'class',
+  theme:{
+    fontFamily:{sans:['Tajawal','sans-serif']},
+    extend:{
+      colors:{
+        bg:'#080b14',bg2:'#0b1020',sf:'#111726',sf2:'#172033',
+        ln:'#222d45',ink:'#eef2fb',mut:'#9aa7c7',fnt:'#6b769a',
+        br:'#4f8cff',b2:'#22d3ee',gr:'#34d399',am:'#fbbf24',
+        rd:'#f87171',vi:'#a78bfa',wa:'#25d366'
+      }
+    }
+  }
+};
+</script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body class="bg-bg text-ink font-sans antialiased overflow-hidden">
+
+<!-- ── LAYOUT ───────────────────────────────────────────────── -->
+<div class="flex h-screen overflow-hidden">
+
+  <!-- SIDEBAR NAV -->
+  <aside id="sidebar" class="w-[210px] flex-shrink-0 bg-sf border-l border-ln flex flex-col overflow-hidden">
+    <!-- Logo -->
+    <div class="px-3.5 py-4 border-b border-ln flex items-center gap-2.5 flex-shrink-0">
+      <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-br to-b2 grid place-items-center flex-shrink-0">
+        <i data-lucide="building-2" class="w-4 h-4 text-[#06121f]"></i>
+      </div>
+      <div>
+        <p class="text-[13.5px] font-extrabold text-ink leading-none">Est8Core</p>
+        <p class="text-[10.5px] text-mut">نظام إدارة عقارية</p>
+      </div>
+    </div>
+    <!-- Nav items -->
+    <nav class="flex-1 overflow-y-auto px-2 py-2" id="navItems">
+      <!-- Populated by buildNav() -->
+    </nav>
+    <!-- Tenant profile -->
+    <div class="border-t border-ln px-3 py-2.5 flex items-center gap-2.5 flex-shrink-0">
+      <div class="w-7 h-7 rounded-full bg-vi/15 text-vi grid place-items-center font-extrabold text-[11px] flex-shrink-0">م</div>
+      <div class="flex-1 min-w-0">
+        <p class="text-[11.5px] font-extrabold text-ink truncate">محمد الفيصل</p>
+        <p class="text-[10px] text-mut truncate">مالك المكتب</p>
+      </div>
+      <button class="w-6 h-6 rounded-md bg-sf2 border border-ln grid place-items-center" onclick="toast('جارٍ تسجيل الخروج...','info')">
+        <i data-lucide="log-out" class="w-3 h-3 text-mut"></i>
+      </button>
+    </div>
+  </aside>
+
+  <!-- MAIN AREA -->
+  <div class="flex-1 flex flex-col overflow-hidden min-w-0">
+
+    <!-- TOP BAR -->
+    <header class="flex-shrink-0 bg-sf border-b border-ln px-4 h-12 flex items-center gap-3">
+      <!-- Page title -->
+      <h1 id="pageTitle" class="text-[14px] font-extrabold text-ink flex-1 truncate">لوحة التحكم</h1>
+
+      <!-- Search -->
+      <div class="relative hidden xl:flex items-center">
+        <i data-lucide="search" class="w-3.5 h-3.5 text-mut absolute right-2.5 pointer-events-none"></i>
+        <input class="bg-bg2 border border-ln rounded-lg pr-8 pl-3 py-1.5 text-[12.5px] text-ink w-48 outline-none focus:border-br transition-all" placeholder="بحث سريع...">
+      </div>
+
+      <!-- Notification bell -->
+      <div class="relative" id="nBell">
+        <button class="w-8 h-8 rounded-lg bg-sf2 border border-ln grid place-items-center relative transition-all hover:bg-[#1d2740]" onclick="toggleNDrop()">
+          <i data-lucide="bell" class="w-4 h-4 text-mut"></i>
+          <span id="navNotifBubble" class="absolute -top-0.5 -left-0.5 w-3.5 h-3.5 rounded-full bg-br text-[8px] font-extrabold text-[#06121f] grid place-items-center" style="display:none">0</span>
+        </button>
+        <!-- Notifications dropdown -->
+        <div id="nDrop" class="absolute top-10 left-0 w-[300px] bg-sf border border-ln rounded-xl shadow-[0_12px_40px_rgba(0,0,0,.5)] z-50 overflow-hidden transition-all duration-150" style="opacity:0;visibility:hidden">
+          <!-- Populated by renderNDrop() -->
+        </div>
+      </div>
+
+      <!-- Current user avatar -->
+      <div class="w-7 h-7 rounded-full bg-vi/15 text-vi grid place-items-center font-extrabold text-[11px] cursor-pointer" onclick="switchView('settings')">م</div>
+    </header>
+
+    <!-- MAIN CONTENT SCROLL -->
+    <main class="flex-1 overflow-y-auto p-4" id="mainContent">
+      <!-- Populated by renderApp() -->
+    </main>
+
+  </div>
+</div>
+
+<!-- ── GLOBAL MODAL ──────────────────────────────────────────── -->
+<div id="globalModal" class="fixed inset-0 bg-bg/80 backdrop-blur-sm z-[100] flex items-center justify-center p-4 transition-all duration-150" style="opacity:0;visibility:hidden">
+  <div data-mbox class="bg-sf border border-ln rounded-2xl w-full max-w-lg max-h-[85vh] flex flex-col shadow-[0_24px_60px_rgba(0,0,0,.7)] transition-all duration-150" style="transform:scale(.95);opacity:0">
+    <!-- Modal header -->
+    <div class="flex items-center justify-between px-4 py-3.5 border-b border-ln flex-shrink-0">
+      <h3 id="modalTitle" class="text-[14px] font-extrabold text-ink"></h3>
+      <button class="w-7 h-7 rounded-lg bg-sf2 border border-ln grid place-items-center hover:bg-[#1d2740] transition-all" onclick="closeModal()">
+        <i data-lucide="x" class="w-3.5 h-3.5 text-mut"></i>
+      </button>
+    </div>
+    <!-- Modal body -->
+    <div id="modalBody" class="flex-1 overflow-y-auto p-4 text-[13px]"></div>
+    <!-- Modal footer -->
+    <div id="modalFooter" class="flex items-center justify-end gap-2 px-4 py-3 border-t border-ln flex-shrink-0 flex-wrap"></div>
+  </div>
+</div>
+
+<!-- ── SIDE DRAWER ────────────────────────────────────────────── -->
+<div id="sideDrawer" class="fixed top-0 left-0 bottom-0 w-[380px] bg-sf border-l border-ln shadow-[0_0_50px_rgba(0,0,0,.6)] z-[90] flex flex-col transition-transform duration-300" style="transform:translateX(-110%);pointer-events:none">
+  <div class="flex items-center justify-between px-4 py-3.5 border-b border-ln flex-shrink-0">
+    <h3 id="drawerTitle" class="text-[14px] font-extrabold text-ink"></h3>
+    <button class="w-7 h-7 rounded-lg bg-sf2 border border-ln grid place-items-center hover:bg-[#1d2740] transition-all" onclick="closeDrawer()">
+      <i data-lucide="x" class="w-3.5 h-3.5 text-mut"></i>
+    </button>
+  </div>
+  <div id="drawerBody" class="flex-1 overflow-y-auto p-4"></div>
+</div>
+
+<!-- ── OVERLAY ────────────────────────────────────────────────── -->
+<div id="overlay" class="fixed inset-0 bg-bg/60 backdrop-blur-sm z-[80] transition-all duration-300" style="opacity:0;visibility:hidden"></div>
+
+<!-- ── TOAST ZONE ─────────────────────────────────────────────── -->
+<div id="toastZone" class="fixed bottom-4 left-4 z-[200] flex flex-col gap-2 pointer-events-none"></div>
+
+<!-- ── SCRIPTS (order matters) ───────────────────────────────── -->
+<script src="js/constants.js"></script>
+<script src="js/state.js"></script>
+<script src="js/core.js"></script>
+<script src="js/views.js"></script>
+<script src="js/actions.js"></script>
+
+</body>
+</html>
