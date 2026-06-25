@@ -13,13 +13,13 @@
 
 <br/>
 
-[![Live Demo](https://img.shields.io/badge/▶_Try_the_Live_Demo-4f8cff?style=for-the-badge&logoColor=white)](https://est8core.github.io/.github/)
+[![Live Demo](https://img.shields.io/badge/▶_Try_the_Live_Demo-4f8cff?style=for-the-badge&logoColor=white)](https://est8core.github.io/platformdemo/)
 &nbsp;
 [![Arabic](https://img.shields.io/badge/🇸🇦_اقرأ_بالعربية-22d3ee?style=for-the-badge)](./README.ar.md)
 &nbsp;
 [![Partnership](https://img.shields.io/badge/🤝_Partner_with_us-34d399?style=for-the-badge)](#-partnership--early-access--contact)
 
-![Status](https://img.shields.io/badge/Status-Early%20Access-fbbf24?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Pre--launch-fbbf24?style=flat-square)
 ![Model](https://img.shields.io/badge/Multi--Tenant-SaaS-34d399?style=flat-square)
 ![Arabic](https://img.shields.io/badge/Arabic--First-RTL-4f8cff?style=flat-square)
 ![Region](https://img.shields.io/badge/Built%20for-MENA-22d3ee?style=flat-square)
@@ -118,11 +118,13 @@ Regional incumbents are **mature and capable** — Est8Core competes by owning t
 | 👤 | **Contacts** | Unified client record with a full interaction timeline |
 | 🏠 | **Properties** | Catalog with media, status & publishing |
 | 🤝 | **Deals** | Negotiation pipeline · **commissions, installments**, approvals |
+| 💳 | **Billing & Subscriptions** | Multi‑provider payments (**Stripe · Paymob · PayTabs · manual**) · subscriptions · invoices & **e‑invoicing (ETA/ZATCA)** |
 | 🏢 | **Branches & Teams** | A real organizational hierarchy |
 | 🔐 | **RBAC + Data Scoping** | Each role sees/edits only what's theirs — **company / branch / team / assigned** |
-| 💬 | **WhatsApp Inbox** | Talk to clients inside the system · *(roadmap)* |
-| 🔔 | **Notifications** | Real‑time, multi‑channel · *(roadmap)* |
+| 👑 | **Platform Admin** | Multi‑tenant control — tenants · plans · billing · **audit log** · platform team & roles |
 | 📤 | **Data I/O** | Import & export — full operability |
+| 💬 | **WhatsApp Inbox** | Talk to clients inside the system · *(roadmap)* |
+| 🔔 | **Notifications** | Real‑time engine (WebSocket) **built** · multi‑channel · *(UI on roadmap)* |
 | 📊 | **Dashboards · Reports · Targets** | Role‑aware management visibility · *(roadmap)* |
 
 ---
@@ -139,10 +141,11 @@ Regional incumbents are **mature and capable** — Est8Core competes by owning t
 
 | Stage | Scope |
 |---|---|
-| ✅ **Foundation & Security** | Multi‑tenancy · RBAC + hierarchy/teams/scoping · auth hardening |
-| 🚧 **CRM Depth** | Lead assignment/distribution · deal commissions & installments · unified client record |
-| 🔜 **Communication** | WhatsApp inbox · real‑time notifications · import/export |
-| 🔜 **Platform** | Dashboards · targets · reports · portals · billing |
+| ✅ **Foundation & Security** | Multi‑tenancy (schema‑per‑tenant) · RBAC + hierarchy/teams/scoping · auth hardening |
+| ✅ **CRM Core** | Leads (assignment/distribution) · Contacts · Properties · Deals (commissions/installments/approvals) · Import/Export |
+| ✅ **Billing & Platform Admin** | Multi‑provider billing · subscriptions · **e‑invoicing** · multi‑tenant admin (tenants · plans · audit · team) |
+| 🚧 **Frontend Apps** | Customer‑facing web apps (marketing · CRM · platform admin) on a shared design system — *building now* |
+| 🔜 **Communication & Insight** | WhatsApp inbox · notifications UI · dashboards · targets · reports · portals |
 | 🤖 **AI Horizon** | **Smart lead scoring & prioritization · intelligent auto‑distribution · AI WhatsApp assistant (draft replies / summarize) · predictive deal forecasting · property↔client matching · natural‑language reports & search** |
 
 ---
@@ -153,7 +156,7 @@ Try an early interactive preview of the product — no signup:
 
 <div align="center">
 
-[![Open Live Demo](https://img.shields.io/badge/▶_Open_Live_Demo-est8core.github.io-4f8cff?style=for-the-badge)](https://est8core.github.io/.github/)
+[![Open Live Demo](https://img.shields.io/badge/▶_Open_Live_Demo-est8core.github.io-4f8cff?style=for-the-badge)](https://est8core.github.io/platformdemo/)
 
 </div>
 
@@ -165,7 +168,7 @@ Try an early interactive preview of the product — no signup:
 
 ## 🤝 Partnership · Early Access · Contact
 
-We're in **Early Access** and welcome **partners, brokerages for early onboarding, investors, and developers**.
+We're **pre‑launch — heading into Early Access** and welcome **partners, brokerages for early onboarding, investors, and developers**.
 
 <br/>
 
@@ -183,6 +186,6 @@ We're in **Early Access** and welcome **partners, brokerages for early onboardin
 <br/>
 
 <sub>🏢 A product by <b>Future Solutions Dev</b></sub><br/>
-<sub>© Est8Core — Real‑Estate Brokerage CRM · Built for MENA 🌍 · Early Access</sub>
+<sub>© Est8Core — Real‑Estate Brokerage CRM · Built for MENA 🌍 · Pre‑launch</sub>
 
 </div>
