@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Est8Core Knowledge</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
+
+    <style>
+        :root {
+            --bg: #0b0d12;
+            --sidebar: #12151c;
+            --sidebar-hover: #1b202b;
+            --sidebar-active: #242b3a;
+
+            --card: #141820;
+            --border: #29303d;
+
+            --text: #f5f7fa;
+            --text-muted: #9ca3af;
+
+            --primary: #8b5cf6;
+            --primary-light: #a78bfa;
+            --secondary: #38bdf8;
+
+            --code-bg: #090b0f;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            direction: rtl;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            background: var(--bg);
+            color: var(--text);
+
+            font-family:
+                system-ui,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            direction: rtl;
+        }
+
+        /* =========================
+           APP
+        ========================= */
+
+        .app {
+            min-height: 100vh;
+
+            display: flex;
+            flex-direction: row;
+
+            direction: rtl;
+        }
+
+        /* =========================
+           SIDEBAR
+        ========================= */
+
+        .sidebar {
+            width: 280px;
+            flex-shrink: 0;
+
+            height: 100vh;
+
+            position: sticky;
+            top: 0;
+
+            padding: 24px 16px;
+
+            overflow-y: auto;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #161922 0%,
+                    #0f1117 100%
+                );
+
+            border-left:
+                1px solid var(--border);
+        }
+
+        .sidebar-header {
+            padding:
+                0 10px 20px;
+
+            margin-bottom: 18px;
+
+            border-bottom:
+                1px solid var(--border);
+        }
+
+        .sidebar-header h2 {
+            margin: 0 0 6px;
+
+            font-size: 21px;
+            font-weight: 800;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--primary-light),
+                    var(--secondary)
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+        }
+
+        .sidebar-header p {
+            margin: 0;
+
+            color: var(--text-muted);
+
+            font-size: 13px;
+        }
+
+        /* =========================
+           NAV
+        ========================= */
+
+        .nav {
+            display: flex;
+            flex-direction: column;
+
+            gap: 6px;
+        }
+
+        .nav-item {
+            width: 100%;
+
+            border: 1px solid transparent;
+            border-radius: 10px;
+
+            padding:
+                12px 14px;
+
+            background: transparent;
+
+            color: var(--text-muted);
+
+            text-align: right;
+
+            cursor: pointer;
+
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 600;
+
+            transition:
+                .2s ease;
+        }
+
+        .nav-item:hover {
+            background:
+                var(--sidebar-hover);
+
+            color: var(--text);
+
+            transform:
+                translateX(-2px);
+        }
+
+        .nav-item.active {
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(139, 92, 246, .20),
+                    rgba(56, 189, 248, .07)
+                );
+
+            border-color:
+                rgba(139, 92, 246, .35);
+
+            color: #fff;
+        }
+
+        .nav-item.active::before {
+            content: "";
+
+            display: inline-block;
+
+            width: 4px;
+            height: 18px;
+
+            margin-left: 9px;
+
+            vertical-align: middle;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    var(--primary),
+                    var(--secondary)
+                );
+        }
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        .main {
+            flex: 1;
+
+            min-width: 0;
+
+            padding: 40px;
+        }
+
+        .content-wrapper {
+            max-width: 1000px;
+
+            margin:
+                0 auto;
+        }
+
+        .content-card {
+            min-height:
+                calc(100vh - 80px);
+
+            padding: 40px;
+
+            background:
+                var(--card);
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                16px;
+
+            box-shadow:
+                0 20px 60px
+                rgba(0, 0, 0, .2);
+        }
+
+        /* =========================
+           MARKDOWN
+        ========================= */
+
+        #markdown-content {
+            direction: rtl;
+            text-align: right;
+
+            font-size: 16px;
+
+            line-height: 1.9;
+        }
+
+        #markdown-content h1,
+        #markdown-content h2,
+        #markdown-content h3,
+        #markdown-content h4 {
+            color: #fff;
+
+            line-height: 1.4;
+
+            font-weight: 800;
+        }
+
+        #markdown-content h1 {
+            font-size: 32px;
+
+            margin-top: 0;
+
+            padding-bottom: 15px;
+
+            border-bottom:
+                1px solid var(--border);
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #fff,
+                    var(--primary-light)
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+        }
+
+        #markdown-content h2 {
+            font-size: 25px;
+
+            margin-top: 40px;
+
+            padding-bottom: 10px;
+
+            border-bottom:
+                1px solid var(--border);
+        }
+
+        #markdown-content h3 {
+            font-size: 20px;
+
+            margin-top: 30px;
+        }
+
+        #markdown-content p {
+            margin:
+                0 0 18px;
+
+            color: #d6d9df;
+        }
+
+        #markdown-content strong {
+            color: #fff;
+        }
+
+        /* =========================
+           LISTS
+        ========================= */
+
+        #markdown-content ul,
+        #markdown-content ol {
+            padding-right: 25px;
+            padding-left: 0;
+        }
+
+        #markdown-content li {
+            margin-bottom: 9px;
+        }
+
+        #markdown-content li::marker {
+            color:
+                var(--primary-light);
+        }
+
+        /* =========================
+           BLOCKQUOTE
+        ========================= */
+
+        #markdown-content blockquote {
+            margin:
+                22px 0;
+
+            padding:
+                14px 18px;
+
+            border-right:
+                4px solid var(--primary);
+
+            border-left: none;
+
+            border-radius:
+                8px;
+
+            background:
+                rgba(139, 92, 246, .08);
+
+            color:
+                #c7cad1;
+        }
+
+        /* =========================
+           CODE
+        ========================= */
+
+        #markdown-content pre {
+            direction: ltr !important;
+            text-align: left !important;
+
+            margin:
+                22px 0;
+
+            padding:
+                18px;
+
+            overflow-x: auto;
+
+            background:
+                var(--code-bg);
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                10px;
+        }
+
+        #markdown-content pre code {
+            direction: ltr !important;
+            text-align: left !important;
+
+            padding: 0;
+
+            background: transparent;
+
+            color: #e5e7eb;
+
+            font-family:
+                "SFMono-Regular",
+                Consolas,
+                "Liberation Mono",
+                Menlo,
+                monospace;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+        }
+
+        #markdown-content code {
+            direction: ltr;
+
+            padding:
+                3px 7px;
+
+            background:
+                rgba(139, 92, 246, .12);
+
+            color:
+                #c4b5fd;
+
+            border-radius:
+                5px;
+
+            font-family:
+                "SFMono-Regular",
+                Consolas,
+                monospace;
+
+            font-size: .9em;
+        }
+
+        /* =========================
+           TABLE
+        ========================= */
+
+        #markdown-content table {
+            width: 100%;
+
+            margin:
+                25px 0;
+
+            border-collapse:
+                collapse;
+
+            border:
+                1px solid var(--border);
+        }
+
+        #markdown-content th,
+        #markdown-content td {
+            padding:
+                11px 14px;
+
+            border:
+                1px solid var(--border);
+
+            text-align: right;
+
+            vertical-align: top;
+        }
+
+        #markdown-content th {
+            background:
+                rgba(139, 92, 246, .15);
+
+            color: #fff;
+        }
+
+        #markdown-content td {
+            color:
+                #d5d8df;
+        }
+
+        /* =========================
+           LINKS
+        ========================= */
+
+        #markdown-content a {
+            color:
+                var(--secondary);
+
+            text-decoration: none;
+        }
+
+        #markdown-content a:hover {
+            text-decoration:
+                underline;
+        }
+
+        /* =========================
+           HR
+        ========================= */
+
+        #markdown-content hr {
+            border: 0;
+
+            border-top:
+                1px solid var(--border);
+
+            margin:
+                35px 0;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .app {
+                display: block;
+            }
+
+            .sidebar {
+                width: 100%;
+
+                height: auto;
+
+                position: sticky;
+                top: 0;
+
+                z-index: 100;
+
+                padding: 14px;
+
+                border-left: none;
+
+                border-bottom:
+                    1px solid var(--border);
+            }
+
+            .sidebar-header {
+                padding:
+                    0 8px 12px;
+
+                margin-bottom: 12px;
+            }
+
+            .nav {
+                flex-direction: row;
+
+                overflow-x: auto;
+            }
+
+            .nav-item {
+                min-width: max-content;
+
+                white-space: nowrap;
+            }
+
+            .nav-item.active::before {
+                display: none;
+            }
+
+            .main {
+                padding: 15px;
+            }
+
+            .content-card {
+                min-height: auto;
+
+                padding: 22px;
+            }
+
+            #markdown-content h1 {
+                font-size: 26px;
+            }
+
+            #markdown-content h2 {
+                font-size: 22px;
+            }
+
+            #markdown-content table {
+                display: block;
+
+                overflow-x: auto;
+            }
+        }
+
+        /* =========================
+           SCROLLBAR
+        ========================= */
+
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0d0f14;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #343a48;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+          <div class="sidebar-header">
+                <h2 id="app-title">
+                    Est8Core Knowledge
+                </h2>
+                <p>
+                   Choose a topic
+                </p>
+            </div>
+            <nav
+                class="nav"
+                id="sidebar-nav">
+            </nav>
+
+        </aside>
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main">
+
+            <div class="content-wrapper">
+
+                <article class="content-card">
+
+                    <div
+                        id="markdown-content">
+                    </div>
+
+                </article>
+
+            </div>
+
+        </main>
+
+    </div>
+    <!-- CONTENT -->
+    <script src="./content.js"></script>
+    <!-- APPLICATION -->
+    <script src="./app.js"></script>
+</body>
+
+</html>
